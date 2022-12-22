@@ -519,11 +519,11 @@ function WayHandlers.handle_height(profile,way,result,data)
   forward = Measure.get_max_height(forward,way)
   backward = Measure.get_max_height(backward,way)
 
-  if forward and forward < profile.vehicle_height then
+  if tonumber( forward ) and tonumber( forward ) < tonumber( profile.vehicle_height ) then
     result.forward_mode = mode.inaccessible
   end
 
-  if backward and backward < profile.vehicle_height then
+  if tonumber( backward ) and tonumber( backward ) < tonumber( profile.vehicle_height ) then
     result.backward_mode = mode.inaccessible
   end
 end
